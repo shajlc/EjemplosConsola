@@ -77,33 +77,48 @@ private	int[] maximos (int[] lista){
         return esPalindromo;// hay que cambiar esto luego para qque funcione 
     }
     
-
+   private boolean esIsograma(String palabra){
+       for (int i=0; i<palabra.length()-1; i++){
+           for (int j=i+1; j<palabra.length(); j++){
+               if (palabra.charAt(j) == palabra.charAt(i)){
+                   return false;
+               }
+           }
+       }
+       //si ha recorrido los dos bucles for enteros, es que 
+       //la palabra no tiene letras repetidas
+       return true;
+    }
+    
+    
+    
     
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        EjemplosConsola ejercicios =new EjemplosConsola();    
+        EjemplosConsola ejercicios = new EjemplosConsola();
+       
+//        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros)) );
+//        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros2)) );  
+//        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros3)) ); 
+//        System.out.println( Arrays.toString( ramon.maximos(ramon.listaNumeros4)) );
+//        
+//        ramon.palindromo("ACASO HUBO BUHOS ACA") ;
+//        ramon.palindromo("ACdfgfgddfgASO HUBO BUHOS ACA") ;
+//        ramon.palindromo("TACOCAT") ;
+//        ramon.palindromo("TACCAT") ;
         
-        System.out.println ("HOLA MUNDO!");
         
-        System.out.println(ejercicios.listaNumeros[2]);
+        ejercicios.palindromo("ACASO HUBO BUHOS ACA") ;
+        ejercicios.palindromo("ACdfgfgddfgASO HUBO BUHOS ACA") ;
+        ejercicios.palindromo("TACOCAT") ;
+        ejercicios.palindromo("TACCAT") ;
         
-        System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros)));
-        
-        System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros2)));
-        
-        System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros3)));
-        
-        System.out.println( Arrays.toString(ejercicios.maximos(ejercicios.listaNumeros4)));
-        
-        System.out.println(ejercicios.palindromo("ACASO HUBO BUHOS ACA"));
-        
-        System.out.println(ejercicios.palindromo("HOLA CARACULO"));
-        
-        System.out.println(ejercicios.palindromo("TACOCAT"));
-        
+        System.out.println("TACCAT  " +ejercicios.esIsograma("TACCAT")) ;
+        System.out.println("murcielago  " +ejercicios.esIsograma("murcielago")) ;
+        System.out.println("murcielagoo  " +ejercicios.esIsograma("murcielagoo")) ;
     }
     
 }
